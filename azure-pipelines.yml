@@ -7,7 +7,7 @@ pool:
 steps:
 - task: Docker@2
   inputs:
-    containerRegistry: '{Docker Registry Service Connection Name}'
+    containerRegistry: 'ACR-DevOpsProdAM001'
     repository: 'nginx-echo-headers'
     command: 'buildAndPush'
     Dockerfile: 'Dockerfile'
@@ -15,8 +15,8 @@ steps:
 - task: Kubernetes@1
   inputs:
     connectionType: 'Azure Resource Manager'
-    azureSubscriptionEndpoint: '{Azure Resource Manager Service Connection Name}'
+    azureSubscriptionEndpoint: 'ARM-DEVOPS-PROD-AMER'
     azureResourceGroup: 'devops-prod-aks-am001'
-    kubernetesCluster: '{aks cluster name}'
+    kubernetesCluster: 'DevOps-PROD-AM001'
     command: 'apply'
     arguments: '-f deploy.yaml'
