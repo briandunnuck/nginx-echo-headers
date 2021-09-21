@@ -5,4 +5,4 @@ metadata:
 spec:
   containers:
   - name: private-reg-container
-    image: mygovacr.azurecr.us/nginx-echo-headers:latest
+    image: devopsprodam001.azurecr.io/nginx-echo-headers:latest
