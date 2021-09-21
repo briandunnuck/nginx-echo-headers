@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  name: 'govpool'
+  name: 'shinypool'
 
 steps:
 - task: Docker@2
@@ -16,7 +16,7 @@ steps:
   inputs:
     connectionType: 'Azure Resource Manager'
     azureSubscriptionEndpoint: '{Azure Resource Manager Service Connection Name}'
-    azureResourceGroup: 'gov-devops'
+    azureResourceGroup: 'devops-prod-aks-am001'
     kubernetesCluster: '{aks cluster name}'
     command: 'apply'
     arguments: '-f deploy.yaml'
